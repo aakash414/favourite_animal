@@ -9,19 +9,17 @@ menuButton.addEventListener('click', function() {
 
 
 
-// img and feature transform
 
-const container = document.querySelector('.container');
-const leftSection = document.querySelector('.left-section');
-const rightSection = document.querySelector('.right-section');
+// Add a hover effect to the cards
+const cards = document.querySelectorAll('.card');
 
-function parallax() {
-  const scrollY = window.pageYOffset;
-  leftSection.style.transform = `translateY(${scrollY * 0.4}px)`;
-  rightSection.style.transform = `translateY(${scrollY * 0.4}px)`;
+function handleCardHover() {
+  this.classList.toggle('card-hover');
 }
 
-window.addEventListener('scroll', parallax);
+cards.forEach(card => card.addEventListener('mouseenter', handleCardHover));
+cards.forEach(card => card.addEventListener('mouseleave', handleCardHover));
+
 
 
 
